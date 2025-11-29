@@ -12,25 +12,59 @@ export default function CartModal({
   const { items, removeItem, clear, totalCOP, updateQuantity } = useCart();
   const [showSuccess, setShowSuccess] = useState(false);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [orderId, setOrderId] = useState<string>("");
 
   if (!open) return null;
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     if (items.length === 0) return;
     
     setIsCheckingOut(true);
-    // Simular proceso de compra
-    setTimeout(() => {
+    
+    try {
+      // Preparar datos de la orden
+      const orderData = {
+        items: items.map((item) => ({
+          productId: item.product.id,
+          productName: item.product.name,
+          quantity: item.quantity,
+          pricePerUnit: item.product.priceCOP,
+        })),
+        customerName: "Cliente Demo",
+        customerEmail: "cliente@gymstore.com",
+      };
+
+      // Enviar orden al backend
+      const response = await fetch("/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setOrderId(result.order.id);
+        setShowSuccess(true);
+        clear();
+        
+        // Cerrar modal después de 3 segundos
+        setTimeout(() => {
+          setShowSuccess(false);
+          setOrderId("");
+          onClose();
+        }, 3000);
+      } else {
+        alert("Error al procesar la orden: " + result.error);
+      }
+    } catch (error) {
+      console.error("Error en checkout:", error);
+      alert("Error al procesar la orden");
+    } finally {
       setIsCheckingOut(false);
-      setShowSuccess(true);
-      clear();
-      
-      // Cerrar modal después de 2.5 segundos
-      setTimeout(() => {
-        setShowSuccess(false);
-        onClose();
-      }, 2500);
-    }, 1500);
+    }
   };
 
   return (
@@ -162,6 +196,11 @@ export default function CartModal({
             <div className="text-6xl mb-4 animate-pulse">✅</div>
             <h3 className="text-2xl font-bold text-green-600 mb-2">¡Compra exitosa!</h3>
             <p className="text-gray-600">Tu pedido ha sido procesado correctamente</p>
+            {orderId && (
+              <p className="text-sm text-gray-500 mt-2">
+                Número de orden: <span className="font-mono font-semibold">{orderId}</span>
+              </p>
+            )}
           </div>
         </div>
       )}

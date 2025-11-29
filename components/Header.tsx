@@ -14,8 +14,11 @@ export default function Header({ onOpenCart }: { onOpenCart?: () => void }) {
           <Link href="/" className="font-bold text-lg text-black">
             GymStore
           </Link>
-          <Link href="/catalog" className="text-sm text-black">
+          <Link href="/catalog" className="text-sm text-black hover:text-blue-600">
             Catálogo
+          </Link>
+          <Link href="/orders" className="text-sm text-black hover:text-blue-600">
+            📦 Órdenes
           </Link>
         </div>
         <div className="flex items-center gap-3">

@@ -48,6 +48,7 @@ const products: Product[] = [
     category: "Mancuernas",
     priceCOP: 650000,
     description: "Set ajustable con selector rápido",
+    image: "/products/mancuernas-ajustables-2-24kg.jpg",
   },
   {
     id: "d03",
@@ -55,6 +56,7 @@ const products: Product[] = [
     category: "Mancuernas",
     priceCOP: 450000,
     description: "Barra olímpica de 2.2m con rodamientos",
+    image: "/products/barra-olimpica-20kg.jpg",
   },
   {
     id: "d04",
@@ -62,6 +64,7 @@ const products: Product[] = [
     category: "Mancuernas",
     priceCOP: 800000,
     description: "Set completo de discos de hierro fundido",
+    image: "/products/set-de-discos-100kg.jpg",
   },
   {
     id: "d05",
@@ -69,6 +72,7 @@ const products: Product[] = [
     category: "Mancuernas",
     priceCOP: 120000,
     description: "Kettlebell de hierro fundido con acabado premium",
+    image: "/products/kettlebell-16kg.jpg",
   },
   {
     id: "a01",
@@ -76,6 +80,7 @@ const products: Product[] = [
     category: "Accesorios",
     priceCOP: 85000,
     description: "Set de 5 bandas con diferentes resistencias",
+    image: "/products/banda-de-resistencia-set-5.webp",
   },
   {
     id: "a02",
@@ -83,13 +88,7 @@ const products: Product[] = [
     category: "Accesorios",
     priceCOP: 45000,
     description: "Guantes con agarre antideslizante",
-  },
-  {
-    id: "a03",
-    name: "Cuerda para saltar",
-    category: "Accesorios",
-    priceCOP: 35000,
-    description: "Cuerda ajustable con rodamientos",
+    image: "/products/guantes-entrenamiento.avif",
   },
   {
     id: "a04",
@@ -97,6 +96,7 @@ const products: Product[] = [
     category: "Accesorios",
     priceCOP: 95000,
     description: "Colchoneta antideslizante de 6mm",
+    image: "/products/colchoneta-yoga-premium.jpg",
   },
   {
     id: "a05",
@@ -104,6 +104,7 @@ const products: Product[] = [
     category: "Accesorios",
     priceCOP: 150000,
     description: "Cinturón de cuero para levantamiento de peso",
+    image: "/products/cinturon-de-levantamiento.jpg",
   },
   {
     id: "p01",
@@ -111,6 +112,7 @@ const products: Product[] = [
     category: "Suplementos",
     priceCOP: 120000,
     description: "Proteína de suero con 24g por porción",
+    image: "/products/proteina-whey-2kg.jpg",
   },
   {
     id: "p02",
@@ -118,6 +120,7 @@ const products: Product[] = [
     category: "Suplementos",
     priceCOP: 90000,
     description: "Aminoácidos ramificados 2:1:1",
+    image: "/products/bcaa-300g.jpg",
   },
   {
     id: "p03",
@@ -125,6 +128,7 @@ const products: Product[] = [
     category: "Suplementos",
     priceCOP: 75000,
     description: "Creatina pura micronizada",
+    image: "/products/creatina-monohidrato-500g.jpg",
   },
   {
     id: "p04",
@@ -132,6 +136,7 @@ const products: Product[] = [
     category: "Suplementos",
     priceCOP: 110000,
     description: "Fórmula energética con cafeína y beta-alanina",
+    image: "/products/pre-entreno-300g.jpg",
   },
   {
     id: "p05",
@@ -139,6 +144,7 @@ const products: Product[] = [
     category: "Suplementos",
     priceCOP: 65000,
     description: "Complejo vitamínico completo",
+    image: "/products/multivitaminico-60tabs.webp",
   },
 ];
 
