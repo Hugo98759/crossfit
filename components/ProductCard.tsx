@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import type { Product } from "../types";
 import { useCart } from "../context/CartContext";
 
@@ -26,8 +27,18 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="rounded-lg border border-gray-200 p-4 flex flex-col bg-white text-black shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-blue-300">
-      <div className="h-44 w-full flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center text-6xl">
-        {getCategoryEmoji(product.category)}
+      <div className="h-44 w-full flex-shrink-0 overflow-hidden rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center relative">
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+          />
+        ) : (
+          <span className="text-6xl">{getCategoryEmoji(product.category)}</span>
+        )}
       </div>
       <div className="mt-3 flex-1">
         <h3 className="text-lg font-semibold text-black line-clamp-2">{product.name}</h3>

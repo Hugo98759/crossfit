@@ -8,6 +8,7 @@ const products: Product[] = [
     category: "Máquinas",
     priceCOP: 4200000,
     description: "Máquina completa para ejercicios de fuerza",
+    image: "/products/maquina-multiestacion.jfif",
   },
   {
     id: "m02",
@@ -15,6 +16,7 @@ const products: Product[] = [
     category: "Máquinas",
     priceCOP: 2800000,
     description: "Rack profesional con barra olímpica incluida",
+    image: "/products/rack-de-sentadilla.jfif",
   },
   {
     id: "m03",
@@ -22,6 +24,7 @@ const products: Product[] = [
     category: "Máquinas",
     priceCOP: 3500000,
     description: "Caminadora con 12 programas y monitor LCD",
+    image: "/products/caminadora-electrica.jfif",
   },
   {
     id: "m04",
@@ -29,6 +32,7 @@ const products: Product[] = [
     category: "Máquinas",
     priceCOP: 1200000,
     description: "Bicicleta con resistencia magnética ajustable",
+    image: "/products/bicicleta-estatica.jfif",
   },
   {
     id: "d01",
@@ -36,6 +40,7 @@ const products: Product[] = [
     category: "Mancuernas",
     priceCOP: 180000,
     description: "Par de mancuernas recubiertas en neopreno",
+    image: "/products/mancuernas-10kg-par.jpg",
   },
   {
     id: "d02",
