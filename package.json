@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev:app": "next dev",
-    "dev:server": "ts-node-dev --respawn --transpile-only server/index.ts",
-    "dev": "concurrently \"npm:dev:app\" \"npm:dev:server\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

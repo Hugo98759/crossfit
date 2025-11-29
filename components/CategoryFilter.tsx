@@ -10,21 +10,39 @@ export default function CategoryFilter({
   selected: string | null;
   onSelect: (c: string | null) => void;
 }) {
+  const getCategoryEmoji = (category: string) => {
+    switch (category) {
+      case "Máquinas": return "🏋️";
+      case "Mancuernas": return "💪";
+      case "Accesorios": return "🎽";
+      case "Suplementos": return "🥤";
+      default: return "📦";
+    }
+  };
+
   return (
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-2">
       <button
-        className={`rounded px-3 py-1 ${selected === null ? "bg-blue-600 text-white" : "bg-gray-100"}`}
+        className={`rounded-lg px-4 py-2 font-medium transition-all duration-200 transform hover:scale-105 ${
+          selected === null 
+            ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md" 
+            : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+        }`}
         onClick={() => onSelect(null)}
       >
-        Todos
+        📦 Todos
       </button>
       {categories.map((c) => (
         <button
           key={c}
-          className={`rounded px-3 py-1 ${selected === c ? "bg-blue-600 text-white" : "bg-gray-100"}`}
+          className={`rounded-lg px-4 py-2 font-medium transition-all duration-200 transform hover:scale-105 ${
+            selected === c 
+              ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-md" 
+              : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+          }`}
           onClick={() => onSelect(c)}
         >
-          {c}
+          {getCategoryEmoji(c)} {c}
         </button>
       ))}
     </div>
